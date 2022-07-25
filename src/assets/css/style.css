@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  background-color: #FB6B6B;
+}
+
+.menu {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.menu img {
+  margin: 148px auto 0 auto;
+  height: 161px;
+  width: 131px;
+}
+
+.menu .title {
+  margin-top: 13px;
+  font-family: 'Righteous', cursive;
+  color: white;
+  font-size: 36px;
+}
+
+.menu .start {
+  width: 246px;
+  height: 54px;
+  margin-top: 30px;
+  background-color: white;
+  font-family: 'Recursive', sans-serif;
+  font-size: 18px;
+  color: #D70900;
+  border: solid 1px #D70900;
+  border-radius: 4px;
+  box-shadow: 0 4px 4px 0 #00000026;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
