@@ -8,7 +8,9 @@ export default function Menu(props) {
       <div class="title">
         <span>ZapRecall</span>
       </div>
-      <div class="start" onClick={() => props.setIniciado(true)}>Iniciar Recall!</div>
+      <div class="start" onClick={() => props.setIniciado(true)}>
+        Iniciar Recall!
+      </div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import minlogo from "../src/assets/img/logo-pequeno.png";
 import Question from "./Question";
 
@@ -32,23 +32,38 @@ export default function Game(props) {
       answer:
         "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
       result: "",
-    }
+    },
   ];
   deck.sort(comparador);
   function comparador() {
     return Math.random() - 0.5;
   }
+  const [icons, setIcons] = useState([]);
   return (
     <div class="game">
       <div class="header">
         <img src={minlogo} alt="Logo" />
         <span>ZapRecall</span>
       </div>
-          {deck.map((valor, index) => (
-            <Question question={valor.question} answer={valor.answer} key={index} index={index+1}/>
-          ))} 
+      {deck.map((valor, index) => (
+        <Question
+          question={valor.question}
+          answer={valor.answer}
+          key={index}
+          index={index + 1}
+          setIcons={setIcons}
+          icons={icons}
+        />
+      ))}
       <div class="footer">
-        <span>0/4 CONCLUÍDOS</span>
+        <div>{icons.length}/4 CONCLUÍDOS</div>
+        <div>
+          {icons.map((value) => (
+            <span class={value}>
+              <ion-icon name={value}></ion-icon>
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
