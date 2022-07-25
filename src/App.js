@@ -1,9 +1,14 @@
 import "./assets/css/reset.css";
 import "./assets/css/style.css";
-import Start from "./Start";
+import React from "react";
+import Game from "./Game";
+import Menu from "./Menu";
 
-export default function App(){
+export default function App() {
+  const [iniciado, setIniciado] = React.useState(false);
   return(
-    <Start />
-  )
+  <>
+  {(!iniciado) ? <Menu setIniciado={setIniciado} /> : <Game />}
+  </>
+  );
 }
